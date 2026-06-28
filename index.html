@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruixue Ai, biomedical researcher working on ageing-related oral diseases, AI-assisted drug discovery, mitophagy, RNA splicing, and intelligent diagnosis for oral potentially malignant disorders.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <title>Ruixue Ai | Academic Homepage</title>
+  <style>
+    :root {
+      --ink: #1a2027;
+      --muted: #5d6872;
+      --soft: #f5f7f5;
+      --paper: #ffffff;
+      --line: #dbe2e5;
+      --accent: #0d746f;
+      --accent-2: #315f90;
+      --warm: #a85134;
+      --leaf: #537a48;
+      --shadow: 0 16px 36px rgba(26, 32, 39, 0.08);
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.58;
+      letter-spacing: 0;
+    }
+
+    html[lang="zh-CN"] body {
+      font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--warm);
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(219, 226, 229, 0.92);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 11px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .topbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 4px;
+      font-size: 14px;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      background: #eef5f2;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbfcfc;
+    }
+
+    .lang-switch button {
+      min-width: 42px;
+      min-height: 28px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .lang-switch button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 70px;
+      display: grid;
+      grid-template-columns: 305px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 78px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile,
+    .facts,
+    .text-card,
+    .publication,
+    .project-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .profile {
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+      background: #edf3f0;
+    }
+
+    .profile h1 {
+      margin: 16px 0 4px;
+      font-size: 27px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .profile .role {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .profile p {
+      margin: 7px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .profile-links a,
+    .small-link {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: #fbfcfc;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .profile-links a:hover,
+    .small-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .facts {
+      padding: 16px;
+    }
+
+    .facts h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fact-list li {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 9px;
+      align-items: baseline;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .fact-list strong {
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .section {
+      scroll-margin-top: 86px;
+      padding: 0 0 34px;
+      margin-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      padding-top: 2px;
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .compact p {
+      margin: 0 0 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbfcfc;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .simple-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .text-card {
+      padding: 16px;
+    }
+
+    .text-card h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    .text-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 16px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .timeline-row h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+    }
+
+    .timeline-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pub-list,
+    .project-list {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .publication,
+    .project-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 13px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(26, 32, 39, 0.05);
+    }
+
+    .publication::before,
+    .project-item::before {
+      width: 32px;
+      height: 32px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--accent-2);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      content: attr(data-number);
+    }
+
+    .pub-year {
+      display: inline-flex;
+      margin-bottom: 5px;
+      color: var(--warm);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .publication h3,
+    .project-item h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      line-height: 1.34;
+    }
+
+    .publication p,
+    .project-line {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pub-meta,
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 9px;
+    }
+
+    .pub-meta a,
+    .pub-meta span,
+    .project-meta a,
+    .project-meta span {
+      min-height: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      background: #fbfcfc;
+    }
+
+    .pub-meta a:hover,
+    .project-meta a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin: 7px 0;
+    }
+
+    .note {
+      margin-top: 13px;
+      padding: 13px 15px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: #eef5f2;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 930px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        grid-template-columns: minmax(230px, 0.52fr) minmax(0, 1fr);
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 10px 18px;
+      }
+
+      .topbar-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .page {
+        padding: 24px 18px 54px;
+        gap: 24px;
+      }
+
+      .sidebar,
+      .simple-grid,
+      .publication,
+      .project-item,
+      .timeline-row {
+        grid-template-columns: 1fr;
+      }
+
+      .publication::before,
+      .project-item::before {
+        justify-self: start;
+      }
+
+      .profile-links {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portrait {
+        width: min(58%, 190px);
+        height: auto;
+        margin: 0 auto 14px;
+        aspect-ratio: 4 / 5;
+      }
+
+      .profile h1 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      .section {
+        padding-bottom: 28px;
+        margin-bottom: 28px;
+      }
+
+      .section h2 {
+        font-size: 23px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Ruixue Ai homepage">
+        <span class="brand-mark">RA</span>
+        <span data-i18n="brand.name">Ruixue Ai</span>
+      </a>
+      <div class="topbar-actions">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#research" data-i18n="nav.research">Research</a>
+          <a href="#appointments" data-i18n="nav.appointments">Appointments</a>
+          <a href="#publications" data-i18n="nav.publications">Publications</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#honors" data-i18n="nav.honors">Honors</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switch" aria-label="Language">
+          <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang-button="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page" id="top">
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <section class="profile">
+        <img class="portrait" src="assets/images/ruixue-ai.jpeg" alt="Portrait of Ruixue Ai">
+        <h1 data-i18n="profile.name">Ruixue Ai</h1>
+        <p class="role" data-i18n="profile.role">Postdoctoral Researcher</p>
+        <p data-i18n="profile.affiliation">University of Oslo<br>West China School of Stomatology, Sichuan University</p>
+        <p data-i18n="profile.focus">Ageing, oral medicine, and AI-assisted biomedicine</p>
+        <p data-i18n="profile.location">Oslo, Norway / Chengdu, China</p>
+        <p>ruixue.ai@outlook.com</p>
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=T09-YcEAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://www.med.uio.no/klinmed/english/people/aca/ruixuea/" target="_blank" rel="noopener">UiO</a>
+          <a href="https://nva.sikt.no/research-profile/1510859" target="_blank" rel="noopener">NVA</a>
+          <a href="https://www.med.uio.no/klinmed/english/research/news-and-events/events/disputations/2023/ai-alice-ruixue.html" target="_blank" rel="noopener">Defence</a>
+        </div>
+      </section>
+
+      <section class="facts" aria-label="Research facts">
+        <h2 data-i18n="facts.heading">At a Glance</h2>
+        <ul class="fact-list">
+          <li><strong>31</strong><span data-i18n="facts.publications">publications</span></li>
+          <li><strong>13</strong><span data-i18n="facts.first">first- or corresponding-author papers</span></li>
+          <li><strong>19</strong><span data-i18n="facts.top">CAS Q1 Top journal papers</span></li>
+          <li><strong>10</strong><span data-i18n="facts.patents">invention patents applied or granted</span></li>
+          <li><strong>2</strong><span data-i18n="facts.platforms">AI platforms in operation</span></li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="content">
+      <section class="section compact" id="about">
+        <h2 data-i18n="about.heading">About</h2>
+        <p class="lead" data-i18n="about.lead">
+          I study ageing-related oral diseases through AI, multi-species experimental systems, and translational biomedicine.
+        </p>
+        <p data-i18n="about.body1">
+          Dr. Ruixue Ai works across oral medicine, ageing biology, and artificial intelligence. Her research has connected NAD+ metabolism, RNA alternative splicing, mitochondrial homeostasis, and mitophagy in ageing-related disease mechanisms.
+        </p>
+        <p data-i18n="about.body2">
+          Building on doctoral and postdoctoral work at the University of Oslo and clinical training in stomatology, her current direction focuses on intelligent diagnosis and treatment for oral potentially malignant disorders (OPMD), integrating multimodal clinical data, omics, causal inference, large language models, and AI-driven drug screening.
+        </p>
+        <div class="tags" aria-label="Research keywords">
+          <span class="tag">OPMD</span>
+          <span class="tag">NAD+</span>
+          <span class="tag" data-i18n="tag.splicing">RNA splicing</span>
+          <span class="tag" data-i18n="tag.mitophagy">Mitophagy</span>
+          <span class="tag" data-i18n="tag.drug">AI drug discovery</span>
+          <span class="tag" data-i18n="tag.llm">Biomedical LLMs</span>
+          <span class="tag" data-i18n="tag.oral">Oral medicine</span>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <h2 data-i18n="research.heading">Research Interests</h2>
+        <div class="simple-grid">
+          <article class="text-card">
+            <h3 data-i18n="research.card1.title">Ageing mechanisms in oral disease</h3>
+            <p data-i18n="research.card1.body">Mechanistic studies of how NAD+ metabolism, RNA alternative splicing, and organelle function shape OPMD progression, malignant transformation risk, and treatment response.</p>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="research.card2.title">AI-enabled protein isoform analysis</h3>
+            <p data-i18n="research.card2.body">Deep-learning methods for protein isoform structure, interaction prediction, and cross-species validation, including PromptProtein and knowledge-graph-based reasoning.</p>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="research.card3.title">Few-shot intelligent drug screening</h3>
+            <p data-i18n="research.card3.body">AI screening methods for new mitochondrial and mitophagy targets, supported by cell, worm, mouse, and organoid validation workflows.</p>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="research.card4.title">Multimodal intelligent diagnosis</h3>
+            <p data-i18n="research.card4.body">OPMD cohorts that combine oral images, pathology, omics, structured clinical variables, and clinical text to support molecular subtyping, prognosis, and dynamic treatment recommendation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="appointments">
+        <h2 data-i18n="appointments.heading">Appointments and Education</h2>
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="date">2027.01 -</div>
+            <div>
+              <h3 data-i18n="appointments.scu.title">Incoming Distinguished Researcher, Sichuan University</h3>
+              <p data-i18n="appointments.scu.body">West China School of Stomatology. Proposed full-time return appointment for intelligent diagnosis and treatment of OPMD.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="date">2023.11 - Present</div>
+            <div>
+              <h3 data-i18n="appointments.postdoc.title">Postdoctoral Researcher, University of Oslo</h3>
+              <p data-i18n="appointments.postdoc.body">Research and teaching in ageing-related disease mechanisms, AI-assisted drug discovery, and translational biomedicine.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="date">2020.04 - 2023.11</div>
+            <div>
+              <h3 data-i18n="appointments.phd.title">Ph.D. in Clinical Medicine, University of Oslo</h3>
+              <p data-i18n="appointments.phd.body">Doctoral work with Prof. Jon Storm-Mathisen, Prof. Evandro F. Fang, and Prof. Linda Hildegard Bergersen.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="date">2019.09 - 2020.04</div>
+            <div>
+              <h3 data-i18n="appointments.acta.title">Research Appointment, Academic Centre for Dentistry Amsterdam</h3>
+              <p data-i18n="appointments.acta.body">Full-time research appointment in dentistry and oral medicine.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="date">2015.09 - 2018.06</div>
+            <div>
+              <h3 data-i18n="appointments.master.title">M.Sc. in Oral Mucosal Diseases, Sichuan University</h3>
+              <p data-i18n="appointments.master.body">West China School of Stomatology. Supervisor: Prof. Qianming Chen.</p>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="date">2009.09 - 2014.06</div>
+            <div>
+              <h3 data-i18n="appointments.bachelor.title">B.Sc. in Stomatology, Dalian Medical University</h3>
+              <p data-i18n="appointments.bachelor.body">Clinical training in stomatology and oral medicine.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <h2 data-i18n="publications.heading">Selected Publications and Books</h2>
+        <p class="lead" data-i18n="publications.lead">Selected works are shown latest first. Author order follows the source application materials.</p>
+        <p class="note" data-i18n="publications.note">For the most current record, see the linked Google Scholar profile and University of Oslo/NVA publication list.</p>
+        <ol class="pub-list">
+          <li class="publication" data-number="16">
+            <div>
+              <span class="pub-year">2026</span>
+              <h3>Reduced ULK1 links impaired autophagy and mitophagy to Alzheimer's disease pathology</h3>
+              <p>Junping Pan, Ping-Jie Wang, Jianying Zhang, Anne-Brita Knapskog, Leiv Otto Watne, He-Ling Wang, and coauthors. <em>Nature Aging</em>, 6(5): 1079-1102.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1038/s43587-026-01108-z" target="_blank" rel="noopener">DOI</a><span>Autophagy</span><span>Mitophagy</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="15">
+            <div>
+              <span class="pub-year">2026</span>
+              <h3>STUB1-VCP/p97 complex regulates mitophagy via fine-tuning of PINK1 levels</h3>
+              <p>Jin Yi Lin, Ze Bo Huang, Shi-qi Zhang, Yong Wu, Ling Jun Cheng, Xiangzheng Gao, and coauthors. <em>Cell Reports</em>, 45(4).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1016/j.celrep.2026.117183" target="_blank" rel="noopener">DOI</a><span>PINK1</span><span>Mitophagy</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="14">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>NAD+ reverses Alzheimer's neurological deficits via regulating differential alternative RNA splicing of EVA1C</h3>
+              <p><strong>Ruixue Ai</strong>, Lipeng Mao, Xurui Jin, and coauthors. <em>Science Advances</em>, 11(45).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1126/sciadv.ady9811" target="_blank" rel="noopener">DOI</a><span>Science Advances</span><span>Co-first author</span><span>EVA1C</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="13">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>NAD+ restores proteostasis through splicing-dependent autophagy</h3>
+              <p><strong>Ruixue Ai</strong>, Fei Fang-Stavem. <em>Autophagy</em>, 22(2): 436-438.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1080/15548627.2025.2596679" target="_blank" rel="noopener">DOI</a><span>Autophagy</span><span>First author</span><span>NAD+</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="12">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>Artificial intelligence in drug development for delirium and Alzheimer's disease</h3>
+              <p><strong>Ruixue Ai</strong>, Xianglu Xiao, Shenglong Deng, Nan Yang, and coauthors. <em>Acta Pharmaceutica Sinica B</em>, 15(9): 4386-4410.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1016/j.apsb.2025.04.026" target="_blank" rel="noopener">DOI</a><span>APSB</span><span>Co-first author</span><span>AI drug discovery</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="11">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>Multiscale Design of Dental Restorative Materials: Mechanistic Foundations, Technological Innovations, and Clinical Translation</h3>
+              <p>Bailei Li, <strong>Ruixue Ai</strong>, Xinjiani Chen, Yaning Wang, and coauthors. <em>Advanced Science</em>, 12(48).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1002/advs.202511258" target="_blank" rel="noopener">DOI</a><span>Advanced Science</span><span>Co-first author</span><span>Oral materials</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="10">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>Mitochondria-Associated Pathways in Cancer and Precancerous Conditions: Mechanistic Insights</h3>
+              <p>Ling Li, Dan Pan, <strong>Ruixue Ai</strong>, Yu Zhou. <em>International Journal of Molecular Sciences</em>, 26(17).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.3390/ijms26178537" target="_blank" rel="noopener">DOI</a><span>IJMS</span><span>Corresponding author</span><span>Precancer</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="9">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>The potential contribution of metal dyshomeostasis to the occurrence of oral leukoplakia-through abnormal immune function</h3>
+              <p>Luyao Cai, Fei Mao, Xiaoyu Huang, Dan Li, Dan Pan, and coauthors including <strong>Ruixue Ai</strong>. <em>Metallomics</em>, 17(12).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1093/mtomcs/mfaf041" target="_blank" rel="noopener">DOI</a><span>Metallomics</span><span>Corresponding author</span><span>Oral leukoplakia</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="8">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>The Rab3 family proteins in age-related neurodegeneration: unraveling molecular pathways and potential therapeutic targets</h3>
+              <p>Haijun He, <strong>Ruixue Ai</strong>, Fei Fang-Stavem, Konstantinos Palikaras. <em>npj Aging</em>, 11(1).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1038/s41514-025-00257-6" target="_blank" rel="noopener">DOI</a><span>Neurodegeneration</span><span>Therapeutic targets</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="7">
+            <div>
+              <span class="pub-year">2025</span>
+              <h3>Pyodermatitis-Pyostomatitis Vegetans: The Role of Langerin Deficiency in Disease Pathogenesis</h3>
+              <p>Dan Pan, Jiongke Wang, Luyao Cai, Mei Huang, Qi Han, Zhijian Zheng, and coauthors including <strong>Ruixue Ai</strong>. <em>Journal of Clinical Medicine</em>, 14(12).</p>
+              <div class="pub-meta"><a href="https://doi.org/10.3390/jcm14124198" target="_blank" rel="noopener">DOI</a><span>Oral mucosal disease</span><span>Immune mechanism</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="6">
+            <div>
+              <span class="pub-year">2024</span>
+              <h3>Integrating AI in fighting advancing Alzheimer: diagnosis, prevention, treatment, monitoring, mechanisms, and clinical trials</h3>
+              <p>Francesco Angelucci, <strong>Ruixue Ai</strong>, Lydia Piendel, Jiri Cerman, Jakub Hort. <em>Current Opinion in Structural Biology</em>, 87.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1016/j.sbi.2024.102857" target="_blank" rel="noopener">DOI</a><span>AI</span><span>Alzheimer's disease</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="5">
+            <div>
+              <span class="pub-year">2022</span>
+              <h3>A synergized machine learning plus cross-species wet-lab validation approach identifies neuronal mitophagy inducers inhibiting Alzheimer disease</h3>
+              <p><strong>Ruixue Ai</strong>, Xu-Xu Zhuang, Alexander Anisimov, Jia-Hong Lu, Evandro F. Fang. <em>Autophagy</em>, 18(4): 939-941.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1080/15548627.2022.2031382" target="_blank" rel="noopener">DOI</a><span>Autophagy</span><span>Co-first author</span><span>Mitophagy</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="4">
+            <div>
+              <span class="pub-year">2022</span>
+              <h3>Amelioration of Alzheimer's disease pathology by mitophagy inducers identified via machine learning and a cross-species workflow</h3>
+              <p>Chenglong Xie, Xu-Xu Zhuang, Zhangming Niu, <strong>Ruixue Ai</strong>, and coauthors. <em>Nature Biomedical Engineering</em>, 6(1): 76-93.</p>
+              <div class="pub-meta"><a href="https://doi.org/10.1038/s41551-021-00819-5" target="_blank" rel="noopener">DOI</a><span>Nature Biomedical Engineering</span><span>Co-first author</span><span>Highly cited</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="3">
+            <div>
+              <span class="pub-year">2021</span>
+              <h3>Effects of Antibiotics Versus Repeated Applications of Photodynamic Therapy as an Adjunctive Treatment for Periodontitis: A Systematic Review and Meta-Analysis</h3>
+              <p><strong>Ruixue Ai</strong>, Min Nie, Jingmei Yang, Dongmei Deng. <em>Photobiomodulation, Photomedicine, and Laser Surgery</em>, 39(3).</p>
+              <div class="pub-meta"><span>Meta-analysis</span><span>Co-first author</span><span>Periodontitis</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="2">
+            <div>
+              <span class="pub-year">2020</span>
+              <h3>Ageing and Alzheimer's Disease: Application of Artificial Intelligence in Mechanistic Studies, Diagnosis, and Drug Development</h3>
+              <p><strong>Ruixue Ai</strong>, Xurui Jin, Bowen Tang, Guang Yang, Zhangming Niu, Evandro F. Fang. Springer Nature Switzerland AG.</p>
+              <div class="pub-meta"><span>Book</span><span>AI in ageing</span><span>Springer</span></div>
+            </div>
+          </li>
+          <li class="publication" data-number="1">
+            <div>
+              <span class="pub-year">2017</span>
+              <h3>Microenvironmental regulation of the progression of oral potentially malignant disorders towards malignancy</h3>
+              <p><strong>Ruixue Ai</strong>, Yan Tao, Yilong Hao, Lu Jiang, Hongxia Dan, Ning Ji, Xin Zeng, Yu Zhou, Qianming Chen. <em>Oncotarget</em>, 8(46).</p>
+              <div class="pub-meta"><span>First author</span><span>OPMD</span><span>Oral cancer</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 data-i18n="projects.heading">Funding, Platforms, and Translation</h2>
+        <ol class="project-list">
+          <li class="project-item" data-number="6">
+            <div>
+              <h3 data-i18n="project6.title">Intelligent Diagnosis and Treatment of Oral Potentially Malignant Disorders</h3>
+              <p class="project-line" data-i18n="project6.line">Proposed NSFC Excellent Young Scientists Fund (Overseas) project, hosted by Sichuan University.</p>
+              <div class="project-meta"><span>OPMD</span><span>Multimodal AI</span><span>Clinical translation</span></div>
+            </div>
+          </li>
+          <li class="project-item" data-number="5">
+            <div>
+              <h3 data-i18n="project5.title">Intelligent Resilience Measurement Tools for Delirium Outcomes</h3>
+              <p class="project-line" data-i18n="project5.line">Singapore Temasek Trust joint fund / major international health program, 2023.06 - present. Participant and sub-project contributor.</p>
+              <div class="project-meta"><span>International health</span><span>AI measurement</span></div>
+            </div>
+          </li>
+          <li class="project-item" data-number="4">
+            <div>
+              <h3 data-i18n="project4.title">Defective Mitophagy in Alzheimer Tau Pathology</h3>
+              <p class="project-line" data-i18n="project4.line">Norwegian Research Council medical and health project, 2023.09 - 2028.02. Participant.</p>
+              <div class="project-meta"><span>Mitophagy</span><span>Alzheimer's disease</span><span>AI drug development</span></div>
+            </div>
+          </li>
+          <li class="project-item" data-number="3">
+            <div>
+              <h3 data-i18n="project3.title">Turning up NAD+-Induced Mitophagy to Treat Alzheimer's Disease</h3>
+              <p class="project-line" data-i18n="project3.line">Norwegian health research fund project, 2021.01 - 2026.02. Participant.</p>
+              <div class="project-meta"><span>NAD+</span><span>Mitophagy</span></div>
+            </div>
+          </li>
+          <li class="project-item" data-number="2">
+            <div>
+              <h3 data-i18n="project2.title">Validation of Specific Mitophagy Biomarkers Across Alzheimer's Disease</h3>
+              <p class="project-line" data-i18n="project2.line">Czech-Norway international research collaboration, 2021.10 - 2024.10. Participant.</p>
+              <div class="project-meta"><span>Biomarkers</span><span>International collaboration</span></div>
+            </div>
+          </li>
+          <li class="project-item" data-number="1">
+            <div>
+              <h3 data-i18n="project1.title">Turning up Mitophagy to Blunt Alzheimer Tau Pathologies</h3>
+              <p class="project-line" data-i18n="project1.line">Cure Alzheimer's Fund / international Alzheimer's disease program, 2021.05 - 2024.05. Participant.</p>
+              <div class="project-meta"><span>Tau pathology</span><span>Therapeutic targets</span></div>
+            </div>
+          </li>
+        </ol>
+        <div class="simple-grid" style="margin-top: 14px;">
+          <article class="text-card">
+            <h3>Deep Drug Discovery</h3>
+            <p data-i18n="platform.deep">AI drug-screening platform developed with MindRank AI, reported at roughly 90,000 monthly visits in the application materials.</p>
+            <p style="margin-top: 9px;"><a class="small-link" href="https://deepdrugdiscovery.mindrank.ai/" target="_blank" rel="noopener">deepdrugdiscovery.mindrank.ai</a></p>
+          </article>
+          <article class="text-card">
+            <h3>PharmkGPT</h3>
+            <p data-i18n="platform.pharm">Ageing-related disease domain model and knowledge-graph platform, reported at roughly 80,000 monthly visits.</p>
+            <p style="margin-top: 9px;"><a class="small-link" href="https://pharmkgpt.mindrank.ai/" target="_blank" rel="noopener">pharmkgpt.mindrank.ai</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="honors">
+        <h2 data-i18n="honors.heading">Honors, Intellectual Property, and Service</h2>
+        <div class="simple-grid">
+          <article class="text-card">
+            <h3 data-i18n="honors.selected.title">Selected Honors</h3>
+            <ul class="list">
+              <li data-i18n="honors.item1">2024 Global High-Impact Traditional Chinese Medicine Research Top 50.</li>
+              <li data-i18n="honors.item2">Nomination for the King's Gold Medal of Norway for work in protein analysis.</li>
+              <li data-i18n="honors.item3">2025 interview qualification for the NSFC Excellent Young Scientists Fund (Overseas).</li>
+              <li data-i18n="honors.item4">Representative AI drug-screening work covered in a Nature special feature.</li>
+            </ul>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="ip.title">Intellectual Property and Translation</h3>
+            <ul class="list">
+              <li data-i18n="ip.item1">10 Chinese, US, and Norwegian invention patents applied or granted.</li>
+              <li data-i18n="ip.item2">Two mitophagy-inducing candidate compounds, Kaem and Rhap, advanced toward translational development with NYO3.</li>
+              <li data-i18n="ip.item3">Scientific advisor to MindRank AI, a Forbes Asia 100 to Watch company and Forbes China emerging AI technology top-10 company.</li>
+            </ul>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="service.title">Academic Service</h3>
+            <p data-i18n="service.body">Core member of international ageing, Alzheimer's disease, and Hong Kong-Nordic research centers; member of the Genetics Society of America, Women in Mitophagy, and the Norwegian Artificial Intelligence Research Consortium; editorial board member of Int. J. Dent. Med.</p>
+          </article>
+          <article class="text-card">
+            <h3 data-i18n="talks.title">International Exchange</h3>
+            <p data-i18n="talks.body">Chair of two NO-Age/AD international meetings and invited speaker at meetings in Portugal, Finland, Denmark, the United States, and Norway, with 11 reported invited talks.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2 data-i18n="contact.heading">Contact</h2>
+        <p data-i18n="contact.email">Email: ruixue.ai@outlook.com</p>
+        <p data-i18n="contact.address">University of Oslo / West China School of Stomatology, Sichuan University.</p>
+        <p class="note" data-i18n="contact.note">Private phone and residential address details from the application materials are intentionally omitted from this public homepage draft.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span data-i18n="footer.updated">© 2026 Ruixue Ai. Draft homepage prepared from application materials.</span>
+      <span><a href="#top" data-i18n="footer.top">Back to top</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const zh = {
+      "brand.name": "艾瑞雪",
+      "nav.about": "简介",
+      "nav.research": "研究方向",
+      "nav.appointments": "经历",
+      "nav.publications": "论著",
+      "nav.projects": "项目",
+      "nav.honors": "荣誉",
+      "nav.contact": "联系",
+      "profile.name": "艾瑞雪",
+      "profile.role": "博士后研究员",
+      "profile.affiliation": "奥斯陆大学<br>四川大学华西口腔医学院",
+      "profile.focus": "衰老、口腔医学与 AI 辅助生物医学",
+      "profile.location": "挪威奥斯陆 / 中国成都",
+      "profile.publications": "论著",
+      "profile.contact": "联系",
+      "facts.heading": "概览",
+      "facts.publications": "篇学术论文",
+      "facts.first": "篇第一或通讯作者论文",
+      "facts.top": "篇中科院 1 区 Top 期刊论文",
+      "facts.patents": "项申请或授权发明专利",
+      "facts.platforms": "个上线运行的 AI 平台",
+      "about.heading": "简介",
+      "about.lead": "我围绕衰老相关口腔疾病，结合人工智能、多物种实验体系与转化生物医学开展研究。",
+      "about.body1": "艾瑞雪博士的研究横跨口腔医学、衰老生物学与人工智能。其工作围绕 NAD+ 代谢、RNA 可变剪切、线粒体稳态与线粒体自噬，解析衰老相关疾病的关键机制。",
+      "about.body2": "基于四川大学华西口腔医学院的口腔医学训练，以及奥斯陆大学博士和博士后经历，她当前聚焦口腔潜在恶性疾患（OPMD）的智能诊疗，整合多模态临床数据、组学、因果推断、大语言模型和 AI 智能筛药方法。",
+      "tag.splicing": "RNA 可变剪切",
+      "tag.mitophagy": "线粒体自噬",
+      "tag.drug": "AI 药物发现",
+      "tag.llm": "生物医学大模型",
+      "tag.oral": "口腔医学",
+      "research.heading": "研究方向",
+      "research.card1.title": "口腔疾病中的衰老机制",
+      "research.card1.body": "研究 NAD+ 代谢、RNA 可变剪切与细胞器功能如何影响 OPMD 进展、恶变风险和治疗响应。",
+      "research.card2.title": "AI 辅助蛋白异构体解析",
+      "research.card2.body": "发展蛋白异构体结构、互作预测与跨物种验证方法，包括 PromptProtein 和知识图谱推理。",
+      "research.card3.title": "小样本智能药物筛选",
+      "research.card3.body": "面向线粒体和线粒体自噬新靶点，构建结合细胞、线虫、小鼠和类器官验证的 AI 筛药流程。",
+      "research.card4.title": "多模态智能诊疗",
+      "research.card4.body": "整合口腔图像、病理、组学、结构化临床变量和临床文本，支持分子分型、预后预测和动态治疗推荐。",
+      "appointments.heading": "任职与教育经历",
+      "appointments.scu.title": "拟任特聘研究员，四川大学",
+      "appointments.scu.body": "四川大学华西口腔医学院，围绕口腔潜在恶性疾患智能诊疗开展全职回国研究。",
+      "appointments.postdoc.title": "博士后研究员，奥斯陆大学",
+      "appointments.postdoc.body": "开展衰老相关疾病机制、AI 辅助药物发现与转化生物医学研究和教学工作。",
+      "appointments.phd.title": "临床医学博士，奥斯陆大学",
+      "appointments.phd.body": "博士阶段导师包括 Jon Storm-Mathisen 教授、Evandro F. Fang 教授和 Linda Hildegard Bergersen 教授。",
+      "appointments.acta.title": "科研工作经历，阿姆斯特丹牙科研究所",
+      "appointments.acta.body": "全职从事牙科与口腔医学相关科研工作。",
+      "appointments.master.title": "口腔黏膜病学硕士，四川大学",
+      "appointments.master.body": "四川大学华西口腔医学院，导师为陈谦明教授。",
+      "appointments.bachelor.title": "口腔临床医学学士，大连医科大学",
+      "appointments.bachelor.body": "完成口腔临床医学与口腔医学训练。",
+      "publications.heading": "代表性论著",
+      "publications.lead": "下列为代表性成果，按较新成果优先展示。作者顺序依据申请材料整理。",
+      "publications.note": "最新论文记录可查看页面左侧链接中的 Google Scholar 主页和奥斯陆大学/NVA 出版物列表。",
+      "projects.heading": "项目、平台与转化",
+      "project6.title": "口腔潜在恶性疾患智能诊疗",
+      "project6.line": "国家自然科学基金优秀青年科学基金项目（海外）申请项目，依托单位为四川大学。",
+      "project5.title": "面向谵妄应激反应结局预测的智能韧性测量工具研发",
+      "project5.line": "新加坡淡马锡信托联合基金/国际重大健康研究计划项目，2023.06 至今，参与并承担子课题相关工作。",
+      "project4.title": "阿尔茨海默病 Tau 病理中线粒体自噬缺陷机制及 AI 驱动药物研发",
+      "project4.line": "挪威研究理事会医学与健康项目，2023.09 - 2028.02，参与。",
+      "project3.title": "NAD+ 诱导线粒体自噬干预阿尔茨海默病的机制研究",
+      "project3.line": "挪威医疗卫生科研基金项目，2021.01 - 2026.02，参与。",
+      "project2.title": "阿尔茨海默病连续病程中特异性线粒体自噬生物标志物验证",
+      "project2.line": "捷克-挪威国际科研合作项目，2021.10 - 2024.10，参与。",
+      "project1.title": "激活线粒体自噬干预阿尔茨海默病 Tau 病理机制研究",
+      "project1.line": "美国阿尔茨海默病专项基金项目，2021.05 - 2024.05，参与。",
+      "platform.deep": "与 MindRank AI 合作开发的 AI 智能筛药平台，申请材料显示月访问量约 9 万。",
+      "platform.pharm": "面向衰老相关疾病的垂域大模型和知识图谱平台，申请材料显示月访问量约 8 万。",
+      "honors.heading": "荣誉、知识产权与服务",
+      "honors.selected.title": "代表性荣誉",
+      "honors.item1": "2024 年全球传统中药高影响力研究 Top 50。",
+      "honors.item2": "蛋白解析方向研究成果获挪威国王金质勋章奖提名。",
+      "honors.item3": "2025 年获得海外优青项目会评资格。",
+      "honors.item4": "智能筛药方向代表性成果被 Nature 特刊专题报道。",
+      "ip.title": "知识产权与转化",
+      "ip.item1": "累计申请及授权中国、美国和挪威发明专利 10 项。",
+      "ip.item2": "靶向线粒体自噬候选化合物 Kaem 与 Rhap 推进至 NYO3 转化开发。",
+      "ip.item3": "担任 MindRank AI 科学顾问，该公司入选 Forbes Asia 100 to Watch 及福布斯中国新兴 AI 科技公司前十。",
+      "service.title": "学术服务",
+      "service.body": "担任挪威健康老龄化中心、挪威抗阿尔茨海默病中心和香港-北欧研究中心核心成员；任美国遗传学会、线粒体自噬女性科学家联盟、挪威人工智能研究联盟成员；担任 Int. J. Dent. Med. 期刊编委。",
+      "talks.title": "国际交流",
+      "talks.body": "曾在两届 NO-Age/AD 国际会议中担任大会主席，并受邀在葡萄牙、芬兰、丹麦、美国和挪威等地作会议报告，申请材料统计受邀报告 11 次。",
+      "contact.heading": "联系",
+      "contact.email": "邮箱：ruixue.ai@outlook.com",
+      "contact.address": "奥斯陆大学 / 四川大学华西口腔医学院。",
+      "contact.note": "申请材料中的私人电话和居住地址未放入此公开主页草稿。",
+      "footer.updated": "© 2026 艾瑞雪。主页草稿根据申请材料整理。",
+      "footer.top": "返回顶部"
+    };
+
+    const en = {};
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      en[el.dataset.i18n] = el.innerHTML;
+    });
+
+    function applyLanguage(lang) {
+      const map = lang === "zh" ? zh : en;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.title = lang === "zh" ? "艾瑞雪 | 个人主页" : "Ruixue Ai | Academic Homepage";
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) {
+        meta.content = lang === "zh"
+          ? "艾瑞雪，围绕衰老相关口腔疾病、AI 辅助药物发现、线粒体自噬、RNA 可变剪切与口腔潜在恶性疾患智能诊疗开展研究。"
+          : "Ruixue Ai, biomedical researcher working on ageing-related oral diseases, AI-assisted drug discovery, mitophagy, RNA splicing, and intelligent diagnosis for oral potentially malignant disorders.";
+      }
+      document.querySelector(".brand").setAttribute("aria-label", lang === "zh" ? "艾瑞雪个人主页" : "Ruixue Ai homepage");
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const value = map[el.dataset.i18n];
+        if (value) {
+          el.innerHTML = value;
+        }
+      });
+      document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
+      });
+    }
+
+    document.querySelectorAll("[data-lang-button]").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.langButton));
+    });
+  </script>
+</body>
+</html>
